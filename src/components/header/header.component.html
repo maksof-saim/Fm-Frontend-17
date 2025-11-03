@@ -1,0 +1,100 @@
+<header
+    class="w-full h-16  sticky mr-10 top-0 z-50 bg-gradient-to-r from-emerald-50 via-white to-amber-50 shadow-md  flex justify-center items-center text-center">
+    <!-- Search & Nav (desktop) -->
+    <div class="flex items-center mr-20 gap-2 mb-3">
+        <div
+            class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 via-rose-400 to-emerald-400 flex items-center justify-center text-white font-bold">
+            M</div>
+        <span class="text-lg font-semibold">MarketMate</span>
+    </div>
+    <div class="hidden md:flex items-center mr-20 p-1 gap-10">
+        <div class="relative">
+            <input type="text" placeholder="Search products, shops..."
+                class="block w-80 pl-10 pr-4 py-2 mr-10 rounded-full border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300" />
+            <svg class="w-5 h-5 absolute left-3 top-2.5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+            </svg>
+        </div>
+
+
+        <nav class="flex items-center gap-4 text-sm font-medium mr-[300px]">
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="home">Home</a>
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="about">About</a>
+
+
+            <!-- Categories dropdown -->
+            <div class="relative">
+                <button (click)="toggleCategories()"
+                    class="px-3 py-2 rounded-md hover:bg-amber-400 flex items-center gap-2">
+                    Categories
+                    <svg [class]="categoriesOpen ? 'transform rotate-180 w-4 h-4' : 'w-4 h-4'"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+
+                <div *ngIf="categoriesOpen" class="absolute mt-2 w-48 bg-white rounded-md shadow-lg border">
+                    <a class="block px-4 py-2 hover:bg-slate-100">Fruits & Veg</a>
+                    <a class="block px-4 py-2 hover:bg-slate-100">Groceries</a>
+                    <a class="block px-4 py-2 hover:bg-slate-100">Household</a>
+                    <a class="block px-4 py-2 hover:bg-slate-100">Electronics</a>
+                </div>
+            </div>
+
+
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="menu">Menu</a>
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="contact">Contact</a>
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="contact">Reviews</a>
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="contact">Reviews</a>
+
+        </nav>
+    </div>
+    <!-- Right side: cart and mobile toggle -->
+    <div class="flex items-center gap-4">
+        <button
+            class="absolute top-4 right-4 hidden md:flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l-1.5 6M17 13l1.5 6" />
+            </svg>
+            <span class="text-sm">Cart (2)</span>
+        </button>
+
+
+        <!-- Mobile menu button -->
+        <button (click)="toggleMobile()"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
+            <svg *ngIf="!mobileOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg *ngIf="mobileOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile panel -->
+    <div *ngIf="mobileOpen" class="md:hidden bg-white border-t">
+        <div class="px-4 pt-4 pb-6 space-y-2">
+            <input type="text" placeholder="Search products..."
+                class="block w-full pl-3 pr-3 py-2 rounded-md border border-slate-200" />
+            <a class="block px-3 py-2 rounded-md">Home</a>
+            <a class="block px-3 py-2 rounded-md">About</a>
+            <div>
+                <button (click)="toggleCategories()" class="w-full text-left px-3 py-2">Categories</button>
+                <div *ngIf="categoriesOpen" class="pl-4">
+                    <a class="block px-3 py-2">Fruits & Veg</a>
+                    <a class="block px-3 py-2">Groceries</a>
+                    <a class="block px-3 py-2">Household</a>
+                </div>
+            </div>
+            <a class="block px-3 py-2 rounded-md">Menu</a>
+            <a class="block px-3 py-2 rounded-md">Contact</a>
+        </div>
+    </div>
+</header>
