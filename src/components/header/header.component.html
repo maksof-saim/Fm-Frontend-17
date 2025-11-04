@@ -53,15 +53,22 @@
     </div>
     <!-- Right side: cart and mobile toggle -->
     <div class="flex items-center gap-4">
-        <button
-            class="absolute top-4 right-4 hidden md:flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner">
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l-1.5 6M17 13l1.5 6" />
-            </svg>
-            <span class="text-sm">Cart (2)</span>
-        </button>
+        <div class="flex items-center justify-between">
+            <button
+                class="hidden md:flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner">
+                <a href="cart" class="flex items-center gap-2">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 13l-1.5 6M17 13l1.5 6" />
+                    </svg>
+                    <span class="text-sm">Cart (2)</span>
+                </a>
+            </button>
+        </div>
+
 
 
         <!-- Mobile menu button -->
