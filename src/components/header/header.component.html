@@ -36,18 +36,36 @@
                 </button>
 
 
-                <div *ngIf="categoriesOpen" class="absolute mt-2 w-48 bg-white rounded-md shadow-lg border">
-                    <a class="block px-4 py-2 hover:bg-slate-100">Fruits & Veg</a>
-                    <a class="block px-4 py-2 hover:bg-slate-100">Groceries</a>
-                    <a class="block px-4 py-2 hover:bg-slate-100">Household</a>
-                    <a class="block px-4 py-2 hover:bg-slate-100">Electronics</a>
+                <div *ngIf="categoriesOpen"
+                    class="absolute mt-2 w-44 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-300">
+                    <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                        href="fishes">
+                        🐟 <span>Sea Food</span>
+                    </a>
+                    <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                        href="groceries">
+                        🛒 Groceries
+                    </a>
+                    <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                        href="household">
+                        🏠 Household
+                    </a>
+                    <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                        href="electronics">
+                        ⚡ Electronics
+                    </a>
+                    <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
+                        href="fruits-vegs">
+                        🍎 Fruits & Veg
+                    </a>
                 </div>
+
             </div>
 
 
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="menu">Menu</a>
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="contact">Contact</a>
-            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="contact">Reviews</a>
+            <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="reviews">Reviews</a>
 
         </nav>
     </div>
@@ -64,7 +82,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M7 13l-1.5 6M17 13l1.5 6" />
                     </svg>
-                    <span class="text-sm">Cart (2)</span>
+                    <span class="text-sm">Cart ({{cartCount}})</span>
                 </a>
             </button>
         </div>

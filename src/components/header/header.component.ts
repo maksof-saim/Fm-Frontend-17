@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../app/services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +9,12 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   mobileOpen = false;
   categoriesOpen = false;
+  cartCount = 0;
 
+  constructor(private commonService: CommonService) { }
 
   toggleMobile() {
     this.mobileOpen = !this.mobileOpen;
@@ -21,5 +23,11 @@ export class HeaderComponent {
 
   toggleCategories() {
     this.categoriesOpen = !this.categoriesOpen;
+  }
+
+  ngOnInit(): void {
+    this.commonService.getCartCount().subscribe((count) => {
+      this.cartCount = count;
+    });
   }
 }
