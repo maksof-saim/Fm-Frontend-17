@@ -3,11 +3,12 @@ import { FishService } from '../../app/services/fish.service';
 import { Fish } from '../../app/models/fish.model';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { CommonService } from '../../app/services/common.service';
+import { SwiperComponent } from '../../components/swiper/swiper.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgIf, NgFor],
+  imports: [CommonModule, NgIf, NgFor, SwiperComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -22,9 +23,9 @@ export class HomeComponent {
 
   // Quick Links/Category data
   quickCategories = [
-    { name: 'Fashion', icon: '👕', link: '/fashion' },
-    { name: 'Electronics', icon: '💻', link: '/electronics' },
-    { name: 'Home Goods', icon: '🛋️', link: '/home' },
-    { name: 'Today\'s Deals', icon: '🔥', link: '/deals' },
+    { name: 'Fashion', icon: '👕👕👕', link: '/fashion' },
+    { name: 'Electronics', icon: '💻💻💻', link: '/electronics' },
+    { name: 'Home Goods', icon: '🛋️🛋️🛋️', link: '/home' },
+    { name: 'Today\'s Deals', icon: '🔥🔥🔥', link: '/deals' },
   ];
 }

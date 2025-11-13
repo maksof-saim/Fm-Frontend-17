@@ -1,0 +1,36 @@
+<swiper-container class="w-full" slides-per-view="1" space-between="30" loop="true" navigation="true" pagination="true"
+    autoplay="true" autoplay-delay="3000">
+    <ng-container *ngFor="let product of products">
+        <swiper-slide>
+            <div
+                class="bg-gray-100 p-6 md:p-12 flex flex-col md:flex-row items-center rounded-xl shadow-lg border border-gray-200">
+                <!-- Image -->
+                <div class="md:w-1/2 flex justify-center mb-6 md:mb-0">
+                    <div
+                        class="w-full max-w-md bg-amber-500 h-64 rounded-lg flex items-center justify-center text-gray-700 font-bold">
+                        <img [src]="product.image" [alt]="product.name"
+                            class="w-full h-full object-cover border-amber-500 border-[10px] bg-amber-500 rounded-[20px]" />
+                    </div>
+                </div>
+                <!-- Content -->
+                <div class="md:w-1/2 md:pl-10 text-center md:text-left">
+                    <p class="text-green-600 font-semibold text-lg uppercase mb-2">Exclusive Offer</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
+                        {{ product.name }} Started at <span class="text-amber-500">${{ product.price }}</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-6">
+                        Discover our newest collection with unbeatable winter prices.
+                    </p>
+                    <button
+                        class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
+                        Shop Now
+                    </button>
+                </div>
+            </div>
+        </swiper-slide>
+    </ng-container>
+    <!-- Navigation & Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</swiper-container>
