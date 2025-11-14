@@ -1,33 +1,32 @@
 <header
-    class="w-full h-16  sticky mr-10 top-0 z-50 bg-gradient-to-r from-emerald-300 via-white to-amber-200 shadow-md  flex justify-center items-center text-center">
-    <!-- Search & Nav (desktop) -->
-    <div class="flex items-center mr-20 gap-2 mb-3">
+    class="w-full h-16 sticky top-0 z-50 bg-gradient-to-r from-emerald-300 via-white to-amber-200 shadow-md flex items-center justify-between px-4 md:px-8">
+
+    <div class="flex items-center gap-2">
         <div
             class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 via-orange-400 to-emerald-400 flex items-center justify-center text-white font-bold">
-            M</div>
+            M
+        </div>
         <span class="text-lg font-semibold">MarketMate</span>
     </div>
-    <div class="hidden md:flex items-center mr-20 p-1 gap-10">
-        <div class="relative">
+
+    <div class="hidden md:flex items-center flex-1 gap-6 ml-6">
+        <div class="relative flex-1 max-w-md">
             <input type="text" placeholder="Search products, shops..."
-                class="block placeholder:text-black placeholder:text-lg w-80 pl-10 pr-4 py-2 mr-10 rounded-full border-3 border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300" />
-            <svg class="w-5 h-5 absolute left-3 top-2.5" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
+                class="w-full pl-10 pr-4 py-2 rounded-full border-2 border-amber-500 placeholder-black focus:outline-none focus:ring-2 focus:ring-amber-300" />
+            <svg class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
             </svg>
         </div>
 
-
-        <nav class="flex items-center gap-4 text-sm font-medium mr-[300px]">
+        <nav class="flex items-center gap-4 text-sm font-medium">
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="home">Home</a>
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="about">About</a>
 
-
-            <!-- Categories dropdown -->
             <div class="relative">
                 <button (click)="toggleCategories()"
-                    class="px-3 py-2 rounded-md hover:bg-amber-400 flex items-center gap-2">
+                    class="px-3 py-2 rounded-md hover:bg-amber-400 flex items-center gap-1">
                     Categories
                     <svg [class]="categoriesOpen ? 'transform rotate-180 w-4 h-4' : 'w-4 h-4'"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,63 +34,39 @@
                     </svg>
                 </button>
 
-
                 <div *ngIf="categoriesOpen"
                     class="absolute mt-2 w-44 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden transition-all duration-300">
                     <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
-                        href="fishes">
-                        🐟 <span>Sea Food</span>
-                    </a>
+                        href="fishes">🐟 Sea Food</a>
                     <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
-                        href="groceries">
-                        🛒 Groceries
-                    </a>
+                        href="groceries">🛒 Groceries</a>
                     <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
-                        href="household">
-                        🏠 Household
-                    </a>
+                        href="household">🏠 Household</a>
                     <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
-                        href="electronics">
-                        ⚡ Electronics
-                    </a>
+                        href="electronics">⚡ Electronics</a>
                     <a class="block px-5 py-2.5 text-slate-700 hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
-                        href="fruits-vegs">
-                        🍎 Fruits & Veg
-                    </a>
+                        href="fruits-vegs">🍎 Fruits & Veg</a>
                 </div>
-
             </div>
-
 
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="menu">Menu</a>
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="contact">Contact</a>
             <a class="px-3 py-2 rounded-md hover:bg-amber-400" href="reviews">Reviews</a>
-
         </nav>
     </div>
-    <!-- Right side: cart and mobile toggle -->
-    <div class="flex items-center gap-4">
-        <div class="flex items-center justify-between">
-            <button
-                class="hidden md:flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner">
-                <a href="cart" class="flex items-center gap-2">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 13l-1.5 6M17 13l1.5 6" />
-                    </svg>
-                    <span class="text-sm">Cart ({{cartCount}})</span>
-                </a>
-            </button>
-        </div>
 
+    <div class="flex items-center gap-2">
+        <a href="cart"
+            class="hidden md:flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner text-sm">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l-1.5 6M17 13l1.5 6" />
+            </svg>
+            <span>Cart ({{cartCount}})</span>
+        </a>
 
-
-        <!-- Mobile menu button -->
-        <button (click)="toggleMobile()"
-            class="md:hidden inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
+        <button (click)="toggleMobile()" class="md:hidden p-2 rounded-md focus:outline-none">
             <svg *ngIf="!mobileOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -102,23 +77,51 @@
             </svg>
         </button>
     </div>
-    <!-- Mobile panel -->
-    <div *ngIf="mobileOpen" class="md:hidden bg-white border-t">
-        <div class="px-4 pt-4 pb-6 space-y-2">
+
+    <div *ngIf="mobileOpen"
+        class="md:hidden fixed top-16 left-0 right-0 bottom-0 bg-white border-t shadow-lg z-40 overflow-y-auto">
+        <div class="flex flex-col px-4 pt-4 pb-6 gap-2">
+
             <input type="text" placeholder="Search products..."
-                class="block w-full pl-3 pr-3 py-2 rounded-md border border-slate-200" />
-            <a class="block px-3 py-2 rounded-md">Home</a>
-            <a class="block px-3 py-2 rounded-md">About</a>
-            <div>
-                <button (click)="toggleCategories()" class="w-full text-left px-3 py-2">Categories</button>
-                <div *ngIf="categoriesOpen" class="pl-4">
-                    <a class="block px-3 py-2">Fruits & Veg</a>
-                    <a class="block px-3 py-2">Groceries</a>
-                    <a class="block px-3 py-2">Household</a>
+                class="w-full px-3 py-2 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300" />
+
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Home</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">About</a>
+
+            <div class="w-full">
+                <button (click)="toggleCategories()"
+                    class="w-full text-left px-3 py-2 rounded-md hover:bg-amber-50 flex justify-between items-center">
+                    Categories
+                    <svg [class]="categoriesOpen ? 'transform rotate-180 w-4 h-4' : 'w-4 h-4'"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <div *ngIf="categoriesOpen" class="flex flex-col ml-4 mt-1 gap-1 border-l pl-2">
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🐟 Sea Food</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🛒 Groceries</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🏠 Household</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">⚡ Electronics</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🍎 Fruits & Veg</a>
                 </div>
             </div>
-            <a class="block px-3 py-2 rounded-md">Menu</a>
-            <a class="block px-3 py-2 rounded-md">Contact</a>
+
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Menu</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Contact</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Reviews</a>
+
+            <a href="cart"
+                class="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner mt-2">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 13l-1.5 6M17 13l1.5 6" />
+                </svg>
+                Cart ({{cartCount}})
+            </a>
         </div>
     </div>
 </header>
