@@ -13,8 +13,8 @@ register();
 })
 export class SwiperComponent {
   @Input() products: { name: string; image: string; price: number }[] = [
-    { name: 'Sun Glasses', image: 'assets/sun-glasses.jpg', price: 8.8 },
-    { name: 'Cool Hat', image: 'assets/hat.jpg', price: 12.5 },
+    { name: 'Sun Glasses', image: 'assets/new-premium.jpg', price: 8.8 },
+    { name: 'Cool Hat', image: 'assets/new-premium.jpg', price: 12.5 },
     { name: 'Winter Jacket', image: 'assets/new-premium.jpg', price: 45.0 },
   ];
 }

@@ -1,75 +1,74 @@
-<main class="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
-
-    <section class="mb-10">
-        <app-swiper></app-swiper>
-    </section>
+<section class="mb-10">
+    <app-swiper></app-swiper>
+</section>
 
 
-    <section class="mb-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a *ngFor="let cat of quickCategories"
-                class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center transition duration-300 hover:bg-gray-100 hover:shadow-xl cursor-pointer border border-gray-100">
-                <span class="text-4xl mb-2">{{ cat.icon }}</span>
-                <p class="text-lg font-semibold text-gray-700">{{ cat.name }}</p>
-            </a>
-        </div>
-    </section>
+<section class="mb-10  bg-gradient-to-r from-emerald-50 via-white to-amber-100 ">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a *ngFor="let cat of quickCategories"
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center transition duration-300 hover:bg-gray-100 hover:shadow-xl cursor-pointer border border-gray-100">
+            <span class="text-4xl mb-2">{{ cat.icon }}</span>
+            <p class="text-lg font-semibold text-gray-700">{{ cat.name }}</p>
+        </a>
+    </div>
+</section>
 
-    <section class="mb-12">
-        <div class="bg-amber-500 p-8 text-white rounded-xl shadow-2xl text-center">
-            <h2 class="text-3xl font-bold mb-2">⚡ Sale is Live Now!</h2>
-            <p class="text-xl mb-6">Ends in:</p>
+<section class="mb-12">
+    <div
+        class="bg-gradient-to-r from-emerald-300 via-white to-amber-100 p-8 text-white rounded-xl shadow-2xl text-center">
+        <h2 class="text-3xl font-color font-bold mb-2">⚡ Sale is Live Now <span
+                class="font-bold text-amber-500">!</span></h2>
+        <p class="text-xl mb-6">Ends in:</p>
 
-            <div class="flex justify-center space-x-6 mb-8">
-                <div class="bg-white text-gray-800 p-4 rounded-lg w-20 shadow-md">
-                    <div class="text-3xl font-extrabold">07</div>
-                    <div class="text-sm">DAYS</div>
-                </div>
-                <div class="bg-white text-gray-800 p-4 rounded-lg w-20 shadow-md">
-                    <div class="text-3xl font-extrabold">03</div>
-                    <div class="text-sm">HRS</div>
-                </div>
-                <div class="bg-white text-gray-800 p-4 rounded-lg w-20 shadow-md">
-                    <div class="text-3xl font-extrabold">16</div>
-                    <div class="text-sm">MIN</div>
-                </div>
+        <div class="flex justify-center space-x-6 mb-8">
+            <div class="text-gray-800 p-4 bg-amber-500 rounded-lg w-20 shadow-md">
+                <div class="text-3xl font-extrabold">07</div>
+                <div class="text-sm">DAYS</div>
             </div>
-
-            <button
-                class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-10 rounded-full transition duration-300">
-                Shop Flash Deals
-            </button>
-        </div>
-    </section>
-
-    <section class="mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-green-600 pb-2">⭐ Most Popular Products</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <div *ngFor="let product of popularProducts"
-                class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group border border-gray-100">
-
-                <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                    <div class="text-gray-500">[Image: {{ product.name }}]</div>
-                </div>
-
-                <div class="p-4 text-center">
-                    <p class="text-sm text-gray-500 uppercase">{{ product.category }}</p>
-                    <h3 class="text-lg font-semibold text-gray-900 mt-1 mb-3 truncate">{{ product.name }}</h3>
-
-                    <div class="flex items-center justify-center space-x-2 mb-4">
-                        <span class="text-2xl font-bold text-green-600">${{ product.price | number: '1.2-2' }}</span>
-                        <span *ngIf="product.isOnSale"
-                            class="bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">
-                            SALE
-                        </span>
-                    </div>
-
-                    <button
-                        class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 rounded-lg transition duration-300">
-                        Add to Cart
-                    </button>
-                </div>
+            <div class="text-gray-800 p-4 bg-amber-500 rounded-lg w-20 shadow-md">
+                <div class="text-3xl font-extrabold">03</div>
+                <div class="text-sm">HRS</div>
+            </div>
+            <div class="text-gray-800 p-4 bg-amber-500 rounded-lg w-20 shadow-md">
+                <div class="text-3xl font-extrabold">16</div>
+                <div class="text-sm">MIN</div>
             </div>
         </div>
-    </section>
-</main>
+
+        <button
+            class="bg-black hover:bg-gray-700 text-amber-500 font-bold py-3 px-10 rounded-full transition duration-300">
+            Shop Flash Deals
+        </button>
+    </div>
+</section>
+
+<section class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-green-600 pb-2">⭐ Most Popular Products</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div *ngFor="let product of popularProducts"
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group border border-gray-100">
+
+            <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                <div class="text-gray-500">[Image: {{ product.name }}]</div>
+            </div>
+
+            <div class="p-4 text-center">
+                <p class="text-sm text-gray-500 uppercase">{{ product.category }}</p>
+                <h3 class="text-lg font-semibold text-gray-900 mt-1 mb-3 truncate">{{ product.name }}</h3>
+
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <span class="text-2xl font-bold text-green-600">${{ product.price | number: '1.2-2' }}</span>
+                    <span *ngIf="product.isOnSale"
+                        class="bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">
+                        SALE
+                    </span>
+                </div>
+
+                <button
+                    class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 rounded-lg transition duration-300">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
