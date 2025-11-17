@@ -1,7 +1,128 @@
-<p>contact works!</p>
-<div>
-    <h1>Contact</h1>
-    <p>Contact works!</p>
-    <div>
+<div class="bg-gray-50 min-h-screen">
+
+    <div class="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900">
+                Get In Touch with MarketMate
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                We value your business. Our team is ready to assist you with any query, 24/7.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+            <div class="lg:col-span-2 bg-white p-8 rounded-lg shadow-xl border-t-4 border-orange-500">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+
+                <form class="space-y-6">
+                    <div>
+                        <label for="full-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                        <select id="subject" name="subject"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500">
+                            <option>General Inquiry</option>
+                            <option>Order Support (Returns/Refunds)</option>
+                            <option>Technical Issue</option>
+                            <option>Partnership/Media</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-orange-500 focus:border-orange-500"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 transition duration-300">
+                            Submit Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="lg:col-span-1 space-y-8">
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Customer Support</h3>
+                    <p class="text-gray-600 mb-3">For order tracking, returns, and technical issues.</p>
+                    <p class="font-semibold text-gray-800">Email: <a href="mailto:support@marketmate.com"
+                            class="text-blue-600 hover:underline">support&#64;marketmate.com</a></p>
+                    <p class="font-semibold text-gray-800">Phone: +92 21 111 222 333</p>
+                    <button class="mt-4 text-sm font-medium text-orange-600 hover:text-orange-800">Start Live Chat
+                        (24/7)</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Business Inquiries</h3>
+                    <p class="text-gray-600 mb-3">Partnerships, supplier onboarding, and media.</p>
+                    <p class="font-semibold text-gray-800">Email: <a href="mailto:partners@marketmate.com"
+                            class="text-green-600 hover:underline">partners&#64;marketmate.com</a></p>
+                </div>
+
+                <div class="p-6 bg-yellow-100 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-900">Need Quick Answers?</h3>
+                    <p class="mt-2 text-gray-700">Check our detailed Frequently Asked Questions page.</p>
+                    <a [routerLink]="['/faq']"
+                        class="mt-3 inline-flex items-center text-orange-600 font-medium hover:text-orange-700">
+                        Visit FAQ Center
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center sm:text-4xl">
+                Our Global Offices 🌎
+            </h2>
+            <p class="mt-4 text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10">
+                Visit or mail us at our key operational hubs worldwide.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-t-4 border-green-600">
+                    <h3 class="text-xl font-bold text-gray-900">🇵🇰 Karachi Branch (Pakistan)</h3>
+                    <p class="mt-2 text-gray-600">MarketMate Tower, Plot 14-B, Main Shahra-e-Faisal, Karachi 75500</p>
+                    <div class="mt-4 bg-gray-200 h-40 flex items-center justify-center text-sm text-gray-500 rounded">
+
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-t-4 border-orange-600">
+                    <h3 class="text-xl font-bold text-gray-900">🇦🇪 Dubai HQ (UAE)</h3>
+                    <p class="mt-2 text-gray-600">Office 201, Jumeirah Business Centre 3, Jumeirah Lakes Towers, Dubai
+                    </p>
+                    <div class="mt-4 bg-gray-200 h-40 flex items-center justify-center text-sm text-gray-500 rounded">
+
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-t-4 border-blue-600">
+                    <h3 class="text-xl font-bold text-gray-900">🇬🇧 London Office (UK)</h3>
+                    <p class="mt-2 text-gray-600">25 Canada Square, Canary Wharf, London E14 5LB</p>
+                    <div class="mt-4 bg-gray-200 h-40 flex items-center justify-center text-sm text-gray-500 rounded">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
