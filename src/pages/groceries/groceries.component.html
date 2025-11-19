@@ -1,14 +1,14 @@
 <div class="main">
-    <h1 class="text-2xl font-bold mb-4">Fish Market</h1>
+    <h1 class="text-2xl font-bold mb-4">Groceries Market</h1>
     <div *ngIf="error" class="text-red-500 mb-4">{{ error }}</div>
 
     <div class="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        <div *ngFor="let fish of groceries"
+        <div *ngFor="let data of groceries"
             class="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
             <!-- Discount Badge -->
-            <div *ngIf="fish.discount"
+            <div *ngIf="data.discount"
                 class="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-md shadow">
-                -{{ fish.discount }}%
+                -{{ data.discount }}%
             </div>
             <!-- Wishlist Icon -->
             <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow hover:bg-amber-100 transition">
@@ -21,19 +21,19 @@
 
             <!-- Product Image -->
             <div class="overflow-hidden">
-                <img *ngIf="fish.image" [src]="fish.image" alt="{{fish.name}}"
+                <img *ngIf="data.image" [src]="data.image" alt="{{data.name}}"
                     class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
             </div>
 
             <!-- Product Info -->
             <div class="p-4 flex flex-col justify-between">
-                <h2 class="text-lg font-semibold text-gray-800 truncate">{{ fish.name }}</h2>
+                <h2 class="text-lg font-semibold text-gray-800 truncate">{{ data.name }}</h2>
                 <!-- Rating -->
                 <!-- <div class="flex items-center mt-1">
                     <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4"
-                            [ngClass]="i < fish.rating ? 'text-yellow-400' : 'text-gray-300'">
+                            [ngClass]="i < data.rating ? 'text-yellow-400' : 'text-gray-300'">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M11.48 3.5a.562.562 0 011.04 0l2.112 5.03a.563.563 0 00.475.35l5.384.466a.562.562 0 01.32.98l-4.118 3.573a.562.562 0 00-.182.557l1.29 5.266a.562.562 0 01-.84.61l-4.637-2.873a.562.562 0 00-.586 0l-4.637 2.873a.562.562 0 01-.84-.61l1.29-5.266a.562.562 0 00-.182-.557L3.19 10.33a.562.562 0 01.32-.98l5.384-.466a.563.563 0 00.475-.35L11.48 3.5z" />
                         </svg>
@@ -42,14 +42,14 @@
 
                 <!-- Price -->
                 <div class="mt-2">
-                    <span class="text-xl font-bold text-amber-600">Rs {{ fish.price }}</span>
-                    <!-- <span *ngIf="fish.oldPrice" class="text-sm text-gray-400 line-through ml-2">Rs {{ fish.oldPrice
+                    <span class="text-xl font-bold text-amber-600">Rs {{ data.price }}</span>
+                    <!-- <span *ngIf="data.oldPrice" class="text-sm text-gray-400 line-through ml-2">Rs {{ data.oldPrice
                         }}</span> -->
                 </div>
 
                 <!-- Buttons -->
                 <div class="flex gap-2 mt-4">
-                    <button (click)="removeFromCart(fish)"
+                    <button (click)="removeFromCart(data)"
                         class="flex-1 px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
                         Remove
                     </button>
@@ -62,6 +62,6 @@
     </div>
     <!-- 
     <div class="mt-6">
-        <button (click)="addDummyFish()" class="px-4 py-2 rounded bg-blue-600 text-white">Add Dummy Fish</button>
+        <button (click)="addDummydata()" class="px-4 py-2 rounded bg-blue-600 text-white">Add Dummy data</button>
     </div> -->
 </div>

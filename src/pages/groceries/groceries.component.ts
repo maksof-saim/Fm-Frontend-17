@@ -32,20 +32,20 @@ export class GroceriesComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  addToCart(fish: any) {
-    console.log('Fish added to cart:', fish);
+  addToCart(Groceries: any) {
+    console.log('Groceries added to cart:', Groceries);
   }
 
-  removeFromCart(fish: any) {
-    console.log('Fish removed from cart:', fish);
+  removeFromCart(Groceries: any) {
+    console.log('Groceries removed from cart:', Groceries);
   }
 
-  openDetails(fish: any) {
-    console.log('Fish details:', fish);
+  openDetails(Groceries: any) {
+    console.log('Groceries details:', Groceries);
   }
 
-  deleteFish(id: number) {
+  deleteGroceries(id: number) {
     this.groceries = this.groceries.filter(f => f.id !== id);
-    console.log('Deleted Fish ID:', id);
+    console.log('Deleted Groceries ID:', id);
   }
 }
