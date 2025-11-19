@@ -1,27 +1,33 @@
 # FmFrontend17
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+FM Frontend-17 is a modern, responsive e-commerce application (Freedom Mart) built using Angular 17. It provides a seamless shopping experience with intuitive UI components, dynamic product listings, and smooth navigation.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Responsive design compatible with desktop, tablet, and mobile.
+- Dynamic product listing and categorization..
+- Smooth navigation with Angular routing.
+- Reusable UI components for faster development.
+- Integration-ready for backend APIs.
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Framework: Angular 17
+- Language: TypeScript, HTML, SCSS
+- Tools: Angular CLI, Node.js
 
-## Build
+## Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Follow these instructions to set up the project locally.
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js (v18+ recommended)
+- Angular CLI (v17+)
+- npm 
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the repository:  
+   ```bash
+   git clone <https://github.com/maksof-saim/Fm-Frontend-17>
