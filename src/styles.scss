@@ -3,6 +3,9 @@
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .font-color {
     color: #000000;

@@ -1,0 +1,41 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-50 to-green-50 p-6">
+
+    <div class="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl p-8 border border-white/40
+              animate-scaleIn">
+
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6 animate-fadeUp">
+            Welcome Back!
+        </h2>
+
+        <form class="space-y-5">
+
+            <!-- Email -->
+            <div class="animate-fadeUp [animation-delay:0.1s]">
+                <label class="text-gray-700 font-medium">Email Address</label>
+                <input type="email"
+                    class="w-full mt-1 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-400 outline-none"
+                    placeholder="example@email.com">
+            </div>
+
+            <!-- Password -->
+            <div class="animate-fadeUp [animation-delay:0.2s]">
+                <label class="text-gray-700 font-medium">Password</label>
+                <input type="password"
+                    class="w-full mt-1 px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-400 outline-none"
+                    placeholder="••••••••">
+            </div>
+
+            <button
+                class="w-full mt-3 py-3 rounded-xl bg-gradient-to-r from-green-500 to-yellow-500 text-white font-semibold text-lg transition 
+               hover:shadow-xl hover:-translate-y-1 hover:opacity-95 duration-300 animate-fadeUp [animation-delay:0.3s]">
+                Login
+            </button>
+
+            <p class="text-center mt-3 text-gray-600 animate-fadeUp [animation-delay:0.4s]">
+                Don’t have an account?
+                <a routerLink="/signup" class="text-yellow-600 font-semibold">Sign up</a>
+            </p>
+
+        </form>
+    </div>
+</div>

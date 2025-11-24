@@ -11,9 +11,12 @@ import { HouseholdComponent } from '../pages/household/household.component';
 import { ElectronicsComponent } from '../pages/electronics/electronics.component';
 import { MenuComponent } from '../pages/menu/menu.component';
 import { ReviewsComponent } from '../pages/reviews/reviews.component';
+import { LoginComponent } from '../pages/login/login.component';
+import { SignupComponent } from '../pages/signup/signup.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent }, // default route
+    { path: '', component: LoginComponent },
+    { path: 'home', component: HomeComponent }, // default route
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'category', component: CategoryComponent },
@@ -26,4 +29,6 @@ export const routes: Routes = [
     { path: 'household', component: HouseholdComponent },
     { path: 'electronics', component: ElectronicsComponent },
     { path: 'menu', component: MenuComponent },
+    { path: 'signup', component: SignupComponent },
+
 ];
