@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { CommonService } from '../../app/services/common.service';
 import { SwiperComponent } from '../../components/swiper/swiper.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NgIf, NgFor, SwiperComponent],
+  imports: [CommonModule, NgIf, NgFor, SwiperComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -21,9 +22,9 @@ export class HomeComponent {
 
   // Quick Links/Category data
   quickCategories = [
-    { name: 'Fashion', icon: '👕👕👕', link: '/fashion' },
-    { name: 'Electronics', icon: '💻💻💻', link: '/electronics' },
-    { name: 'Home Goods', icon: '🛋️🛋️🛋️', link: '/home' },
-    { name: 'Today\'s Deals', icon: '🔥🔥🔥', link: '/deals' },
+    { name: 'Household', icon: '🏠🏠🏠', link: '/household', routerLink: '/household' },
+    { name: 'Electronics', icon: '💻💻💻', link: '/electronics', routerLink: '/electronics' },
+    { name: 'Fruits & Veg', icon: '🥕🥕🥕', link: '/fruits-vegs', routerLink: '/fruits-vegs' },
+    { name: 'Sea Food', icon: '🐟🐟🐟', link: '/seafood', routerLink: '/fishes' },
   ];
 }

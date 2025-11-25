@@ -5,7 +5,7 @@
 <!-- QUICK CATEGORIES -->
 <section class="mb-8 bg-gradient-to-r from-emerald-50 via-white to-amber-100 p-2 sm:p-4">
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
-        <a *ngFor="let cat of quickCategories"
+        <a *ngFor="let cat of quickCategories " [routerLink]="cat.routerLink"
             class="bg-white p-3 sm:p-4 rounded-lg shadow-md flex flex-col items-center justify-center transition hover:bg-gray-100 hover:shadow-xl cursor-pointer border border-gray-100 text-center">
             <span class="text-2xl sm:text-3xl md:text-4xl mb-1">{{ cat.icon }}</span>
             <p class="text-xs sm:text-sm md:text-base font-semibold text-gray-700">{{ cat.name }}</p>
