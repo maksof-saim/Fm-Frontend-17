@@ -3,12 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../app/services/auth.service';
 import { z } from 'zod';
 import { NgIf } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, RouterLink],
 })
 export class LoginComponent {
 
@@ -34,7 +35,7 @@ export class LoginComponent {
       .min(6, "Password must be at least 6 characters long"),
   });
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   onLogin() {
     this.errors = { email: '', password: '', server: '' };
@@ -61,6 +62,7 @@ export class LoginComponent {
       next: (res) => {
         localStorage.setItem('token', res.token);
         alert("Login Successful!");
+        this.router.navigate(['/home']);
       },
       error: (err) => {
 

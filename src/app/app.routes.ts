@@ -16,7 +16,6 @@ import { SignupComponent } from '../pages/signup/signup.component';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent }, // default route
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'category', component: CategoryComponent },
@@ -29,6 +28,6 @@ export const routes: Routes = [
     { path: 'household', component: HouseholdComponent },
     { path: 'electronics', component: ElectronicsComponent },
     { path: 'menu', component: MenuComponent },
-    { path: 'signup', component: SignupComponent },
+    { path: 'signup', component: SignupComponent, pathMatch: "full" },
 
 ];
