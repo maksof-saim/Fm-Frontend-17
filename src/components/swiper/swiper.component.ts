@@ -10,6 +10,9 @@ register();
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './swiper.component.html',
+  host: {
+    ngSkipHydration: 'true'  // ✔ correct place
+  }
 })
 export class SwiperComponent {
   @Input() products: { name: string; image: string; price: number }[] = [
