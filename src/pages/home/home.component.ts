@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FishService } from '../../app/services/fish.service';
-import { Fish } from '../../app/models/fish.model';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { CommonService } from '../../app/services/common.service';
 import { SwiperComponent } from '../../components/swiper/swiper.component';
