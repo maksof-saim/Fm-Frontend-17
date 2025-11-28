@@ -84,8 +84,8 @@
             <input type="text" placeholder="Search products..."
                 class="w-full px-3 py-2 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300" />
 
-            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Home</a>
-            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">About</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="home">Home</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="about">About</a>
 
             <div class="w-full">
                 <button (click)="toggleCategories()"
@@ -98,17 +98,18 @@
                 </button>
 
                 <div *ngIf="categoriesOpen" class="flex flex-col ml-4 mt-1 gap-1 border-l pl-2">
-                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🐟 Sea Food</a>
-                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🛒 Groceries</a>
-                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🏠 Household</a>
-                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">⚡ Electronics</a>
-                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">🍎 Fruits & Veg</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="fishes">🐟 Sea Food</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="groceries">🛒 Groceries</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="household">🏠 Household</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="electronics">⚡ Electronics</a>
+                    <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="fruits-vegs">🍎 Fruits &
+                        Veg</a>
                 </div>
             </div>
 
-            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Menu</a>
-            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Contact</a>
-            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50">Reviews</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="menu">Menu</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="contact">Contact</a>
+            <a class="w-full block px-3 py-2 rounded-md hover:bg-amber-50" href="reviews">Reviews</a>
 
             <a href="cart"
                 class="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-3 py-2 rounded-md shadow-inner mt-2">
