@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
@@ -15,4 +15,16 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'Fm-Frontend-17';
+
+  private http = inject(HttpClient); // HttpClient inject karo
+
+  // Example: Get profile
+  getProfile(token: string) {
+    this.http.get('http://localhost:3000/profile', {
+      headers: { Authorization: `Bearer ${token}` }
+    }).subscribe({
+      next: (res) => console.log(res),
+      error: (err) => console.error(err)
+    });
+  }
 }
