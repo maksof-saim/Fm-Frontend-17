@@ -1,13 +1,16 @@
 // auth.service.ts
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
-    private apiUrl = 'http://localhost:3000'; // Backend URL
+    private apiUrl = environment.apiUrl; // Backend URL
+    private platformId = inject(PLATFORM_ID);
 
     constructor(private http: HttpClient) { }
 
@@ -36,16 +39,19 @@ export class AuthService {
 
     // Save token in localStorage
     saveToken(token: string) {
+        if (!isPlatformBrowser(this.platformId)) return;
         localStorage.setItem('jwtToken', token);
     }
 
     // Get token from localStorage
     getToken(): string | null {
+        if (!isPlatformBrowser(this.platformId)) return null;
         return localStorage.getItem('jwtToken');
     }
 
     // Remove token
     removeToken() {
+        if (!isPlatformBrowser(this.platformId)) return;
         localStorage.removeItem('jwtToken');
     }
 }

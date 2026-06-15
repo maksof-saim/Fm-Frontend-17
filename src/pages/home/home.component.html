@@ -54,10 +54,8 @@
         <div *ngFor="let product of popularProducts"
             class="bg-white rounded-xl shadow-lg hover:shadow-xl transition overflow-hidden border border-gray-100">
             <div class="h-32 sm:h-40 md:h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                <div class="text-gray-500 text-xs sm:text-sm md:text-base truncate">
-                    <img src="https://brightrich.com/uploads/catalog/product/medium/origin_65661418eb4r41738836577.webp"
-                        alt="">
-                </div>
+                <img [src]="product.imageUrl" (error)="onImageError($event)" alt="{{ product.name }}"
+                    class="w-full h-full object-cover">
             </div>
 
             <div class="p-2 sm:p-3 md:p-4 text-center">
@@ -76,7 +74,7 @@
                     </span>
                 </div>
 
-                <button
+                <button (click)="addToCart(product)"
                     class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-1.5 sm:py-2 rounded-lg transition">
                     Add to Cart
                 </button>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { ButtonComponent } from '../../components/button/button.component';
+import { CommonService } from '../../app/services/common.service';
+import { Product } from '../../app/models/product.model';
 
 
 @Component({
@@ -33,10 +35,12 @@ export class ElectronicsComponent implements OnInit {
 
 
 
+  constructor(private commonService: CommonService) { }
+
   ngOnInit(): void { }
 
-  addToCart(electronics: any) {
-    console.log('electronics added to cart:', electronics);
+  addToCart(electronics: Product) {
+    this.commonService.addToCart(electronics);
   }
 
   removeFromCart(electronics: any) {
